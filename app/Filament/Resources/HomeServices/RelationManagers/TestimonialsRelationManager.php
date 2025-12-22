@@ -34,8 +34,10 @@ class TestimonialsRelationManager extends RelationManager
                 ->image()
                 ->required()
                 ->disk('cloudinary')
+                ->directory('testimonials')
                 ->getUploadedFileNameForStorageUsing(function ($file) {
-                                return basename($file->hashName()); 
+                                $filename = $file->hashName();
+                                return str_replace('./', '', $filename); 
                 }),
                 Textarea::make('message')
                 ->required(),

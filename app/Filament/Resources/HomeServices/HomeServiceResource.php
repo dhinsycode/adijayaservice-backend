@@ -59,8 +59,10 @@ class HomeServiceResource extends Resource
                             ->required()
                             ->image()
                             ->disk('cloudinary')
+                            ->directory('services')
                             ->getUploadedFileNameForStorageUsing(function ($file) {
-                                return basename($file->hashName()); 
+                                $filename = $file->hashName();
+                                return str_replace('./', '', $filename); 
                             }),
                         TextInput::make('price')
                             ->required()
