@@ -20,8 +20,8 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-    'https://adijaya-service.vercel.app/', 
-    'https://adijayaservice-backend-production.up.railway.app/'
+    'https://adijaya-service.vercel.app', 
+    'https://adijayaservice-backend-production.up.railway.app'
     ],
 
     'allowed_origins_patterns' => [],
