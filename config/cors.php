@@ -20,8 +20,8 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-    'http://localhost:5173', 
-    'https://adijaya-9725-adijayaa.up.railway.app'
+    'https://adijaya-service.vercel.app/', 
+    'https://adijayaservice-backend-production.up.railway.app/'
     ],
 
     'allowed_origins_patterns' => [],
