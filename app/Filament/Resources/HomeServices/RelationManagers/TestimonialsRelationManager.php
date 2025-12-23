@@ -32,9 +32,10 @@ class TestimonialsRelationManager extends RelationManager
                     ->maxLength(255),
                 FileUpload::make('photo')
                 ->image()
-                ->required()
+                ->required(fn (string $operation): bool => $operation === 'create')
                 ->disk('cloudinary')
                 ->directory('testimonials')
+                ->dehydrated(fn ($state) => $state !== null)
                 ->getUploadedFileNameForStorageUsing(function ($file) {
                                 $filename = $file->hashName();
                                 return str_replace('./', '', $filename); 
